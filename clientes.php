@@ -1,6 +1,6 @@
 <?php  
 if ($_POST) {
-    header('location:clientes.php');
+    header('location:clientes2.php');
 }
 ?>
 

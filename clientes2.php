@@ -1,5 +1,7 @@
 <?php  
-//print_r($_POST);
+if ($_POST) {
+    header('location:formulario.php');
+}
 ?>
 
 
@@ -45,7 +47,7 @@
                 </div>
             </div>
 
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST">
 
                 <form class="needs-validation" novalidate>
 
