@@ -38,7 +38,7 @@
                     <hr class="my-2">
                     <p>Empresa se dedica al transporte de productos y mensajería de oficina a sus clientes</p>
                     <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="graficas.php" role="button">""</a>
+                        
                     </p>
                 </div>
             </div>
