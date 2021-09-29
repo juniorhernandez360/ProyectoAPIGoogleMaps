@@ -1,15 +1,35 @@
 <?php  
-$servidor="mysql:dbname=bdatos;host=localhost";
+$dbhost="localhost";
+$dbuser="root";
+$dbpass="";
+$dbname="bdatos";
 
-try{
+$conn =mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-$pdo=new PDO($servidor,"root","",);
+if(!$conn){
 
-echo ('Conectado...');
-}catch (PDOException $e){
+    die("No hay conexion".mysqli_connect_error());
 
-    echo ('Error al Conectar...');
+    $nombre =$_POST["txtusuario"];
+    $pass =$_POST["txtcontrasenia"];
+
+    $query =mysqli_query($conn, "SELECT * FROM login WHERE usuario= '".$nombre."' and password= '".$pass."'" );
+    $nr = mysqli_num_rows($query);
+
+    if($nr ==1 ){
+
+        header("Location: menu.php");
+        echo"Bienvenido:" .$txtusuario;
+
+    }
+    else if($nr == 0){
+
+        echo"No ingreso:";
+
+    }
+    
 }
+
 ?>
 
 
@@ -35,7 +55,7 @@ echo ('Conectado...');
 
 <body>
 
-   
+
 
     <div class="container">
         <div class="row">
@@ -56,12 +76,13 @@ echo ('Conectado...');
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">usuario</label>
-                                <input type="text" class="form-control" name="usuario" placeholder="Ingresar usuario">
+                                <input type="text" class="form-control" name="txtusuario"
+                                    placeholder="Ingresar usuario">
 
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">contraseña</label>
-                                <input type="password" class="form-control" name="contraseña"
+                                <input type="password" class="form-control" name="txtcontrasenia"
                                     placeholder="Ingresar Contraseña">
                             </div>
 
@@ -82,4 +103,5 @@ echo ('Conectado...');
     </div>
 
 </body>
+
 </html>
