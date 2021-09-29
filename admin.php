@@ -10,15 +10,17 @@ if(!$conn){
 
     die("No hay conexion".mysqli_connect_error());
 
-    $nombre =$_POST["txtusuario"];
-    $pass =$_POST["txtcontrasenia"];
+    $nombre =$_POST["usuario"];
+    $pass =$_POST["pass"];
+
+    if(isset($_POST["ingresar"]))
 
     $query =mysqli_query($conn, "SELECT * FROM login WHERE usuario= '".$nombre."' and password= '".$pass."'" );
     $nr = mysqli_num_rows($query);
 
     if($nr ==1 ){
 
-        header("Location: menu.php");
+       // header("Location: menu.php");
         echo"Bienvenido:" .$txtusuario;
 
     }
@@ -31,6 +33,9 @@ if(!$conn){
 }
 
 ?>
+
+
+
 
 
 <!doctype html>
@@ -72,22 +77,22 @@ if(!$conn){
                         login
                     </div>
                     <div class="card-body">
-                        <form method="post">
+                        <form action="menu.php" method="post">
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">usuario</label>
-                                <input type="text" class="form-control" name="txtusuario"
-                                    placeholder="Ingresar usuario">
+                                <input type="text" class="form-control" name="usuario" placeholder="Ingresar usuario">
 
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">contraseña</label>
-                                <input type="password" class="form-control" name="txtcontrasenia"
+                                <input type="password" class="form-control" name="pass"
                                     placeholder="Ingresar Contraseña">
                             </div>
 
 
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                            <button type="submit" value="ingresar" name="ingresar"
+                                class="btn btn-primary">Ingresar</button>
                         </form>
 
 
