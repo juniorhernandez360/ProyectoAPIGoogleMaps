@@ -18,10 +18,13 @@ if(!$conn){
     $query =mysqli_query($conn, "SELECT * FROM login WHERE usuario= '".$nombre."' and password= '".$pass."'" );
     $nr = mysqli_num_rows($query);
 
+    $sql = "SELECT * FROM `login`;";
+
+
     if($nr ==1 ){
 
        // header("Location: menu.php");
-        echo"Bienvenido:" .$txtusuario;
+        echo"Bienvenido:" .$nombre;
 
     }
     else if($nr == 0){
