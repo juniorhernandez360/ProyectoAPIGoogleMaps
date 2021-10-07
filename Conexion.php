@@ -1,11 +1,6 @@
 <?php
-function conectar(){
-$servername = "localhost";
-$database = "bdatos";
-$username = "root";
-$password = "";
 
-$con = mysqli_connect($servername, $username, $password, $database);
+$con = mysqli_connect("localhost", "root", "", "bdatos");
 
 if (!$con) {
     die("Conexion fallida: " . mysqli_connect_error());
@@ -13,5 +8,4 @@ if (!$con) {
 mysqli_close($con);
 
 
-}
 ?>
