@@ -1,11 +1,15 @@
 <?php
+$server = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'bdatos';
 
-$con = mysqli_connect("localhost", "root", "", "bdatos");
+try {
+    $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
+} catch (PDOException $e){
 
-if (!$con) {
-    die("Conexion fallida: " . mysqli_connect_error());
+    die('Connected failed: '.$e->getMessage());
+
 }
-mysqli_close($con);
-
 
 ?>

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -35,25 +34,12 @@
 
                 <div class="card">
                     <div class="card-header">
-                        login
+                        EL NUMERO DE ENVIO ES
                     </div>
                     <div class="card-body">
-                        <form action="menu.html" method="post">
+                        <form " method="post">
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">usuario</label>
-                                <input type="text" class="form-control" name="usuario" placeholder="Ingresar usuario">
-
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">contraseña</label>
-                                <input type="password" class="form-control" name="pass"
-                                    placeholder="Ingresar Contraseña">
-                            </div>
-
-
-                            <button type="submit" value="ingresar" name="ingresar"
-                                class="btn btn-primary">Ingresar</button>
+                            
                         </form>
 
 

@@ -1,3 +1,39 @@
+<?php
+
+require 'conexion.php';
+
+if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['departamento'])&& !empty($_POST['municipio'])&& !empty($_POST['direccion'])&& !empty($_POST['telefono'])
+&& !empty($_POST['nombre2'])&& !empty($_POST['apellido2'])&& !empty($_POST['departamento2'])&& !empty($_POST['municipio2'])&& !empty($_POST['direccion2'])&& !empty($_POST['telefono2'])){
+
+    $sql = "INSERT INTO cliente (nombre, apellido, departamento, municipio, direccion, telefono, nombre2, apellido2, departamento2, municipio2, direccion2, telefono2) 
+    VALUES (:nombre, :apellido, :departamento, :municipio, :direccion, :telefono, :nombre2, :apellido2, :departamento2, :municipio2, :direccion2, :telefono2)";
+    $client = $conn-> prepare($sql);
+    $client->bindparam(':nombre', $_POST['nombre']);
+    $client->bindparam(':apellido', $_POST['apellido']);
+    $client->bindparam(':departamento', $_POST['departamento']);
+    $client->bindparam(':municipio', $_POST['municipio']);
+    $client->bindparam(':direccion', $_POST['direccion']);
+    $client->bindparam(':telefono', $_POST['telefono']);
+
+    $client->bindparam(':nombre2', $_POST['nombre2']);
+    $client->bindparam(':apellido2', $_POST['apellido2']);
+    $client->bindparam(':departamento2', $_POST['departamento2']);
+    $client->bindparam(':municipio2', $_POST['municipio2']);
+    $client->bindparam(':direccion2', $_POST['direccion2']);
+    $client->bindparam(':telefono2', $_POST['telefono2']);
+
+
+    if($client->execute()){
+
+        $message = 'Nueva entrega';
+    }else{
+        $message = 'no se a creado la entrega';
+    }
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +67,7 @@
                 </div>
 
             </div>
-            <form action="registrar.php"method="POST">
+            <form action="cliente2.php" method="POST">
                 <form class="needs-validation" novalidate>
                     <div class="form-row">
                         <div class="col-md-4 mb-3">

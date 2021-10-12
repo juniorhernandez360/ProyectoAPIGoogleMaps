@@ -1,3 +1,28 @@
+<?php
+
+session_start();
+
+require 'conexion.php';
+
+if(isset($_SESSION['user_id'])){
+    $records = $conn->prepare('SELECT id, usuario, password FROM users WHERE id = :id');
+    $records->bindparam(':id', $_SESSION['user_id']);
+    $records->exceute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user=null;
+
+    if(count($results)>0){
+
+        $user= $results;
+
+    }
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +44,12 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="nav navbar-nav">
             
-            <a class="nav-item nav-link active" href="menu.html" role="button">Inicio</a>
-            <a class="nav-item nav-link active" href="baseDatos.html" role="button">Base de datos</a>
-            <a class="nav-item nav-link active" href="pedidos.html" role="button">Pedidos</a>
-            <a class="nav-item nav-link active" href="rutas.html" role="button">Rutas</a>
-            <a class="nav-item nav-link active" href="estadisticas.html" role="button">Estadisticas</a>
-            <a class="nav-item nav-link active" href="estadoPedido.html" role="button">Estado de Pedido</a>
+            <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
+            <a class="nav-item nav-link active" href="baseDatos.php" role="button">Clientes</a>
+            <a class="nav-item nav-link active" href="pedidos.php" role="button">Pedidos</a>
+            <a class="nav-item nav-link active" href="rutas.php" role="button">Rutas</a>
+            <a class="nav-item nav-link active" href="estadisticas.php" role="button">Estadisticas</a>
+            <a class="nav-item nav-link active" href="estadoPedido.php" role="button">Estado de Pedido</a>
         </div>
 
     </nav>
