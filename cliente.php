@@ -67,7 +67,7 @@ if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['depart
                 </div>
 
             </div>
-            <form action="cliente2.php" method="POST">
+            <form  method="POST">
                 <form class="needs-validation" novalidate>
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
@@ -159,7 +159,7 @@ if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['depart
                 <div class="nav navbar-nav">
                 </div>
             </nav>
-            <h1 class="display-3">Datos del Remitente</h1>
+            <h1 class="display-3">Datos del Destinatario</h1>
             <hr class="my-2">
         </div>
         
