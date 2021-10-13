@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="nav navbar-nav">
         <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
-            <a class="nav-item nav-link active" href="baseDatos.php" role="button">Clientes</a>
+        <a class="nav-item nav-link active" href="clientes.php" role="button">Clientes</a>
             <a class="nav-item nav-link active" href="pedidos.php" role="button">Pedidos</a>
             <a class="nav-item nav-link active" href="rutas.php" role="button">Rutas</a>
             <a class="nav-item nav-link active" href="estadisticas.php" role="button">Estadisticas</a>

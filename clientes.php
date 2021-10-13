@@ -1,25 +1,5 @@
 <?php
-
-session_start();
-
-require 'conexion.php';
-
-if(isset($_SESSION['user_id'])){
-    $records = $conn->prepare('SELECT id, usuario, password FROM users WHERE id = :id');
-    $records->bindparam(':id', $_SESSION['user_id']);
-    $records->exceute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $user=null;
-
-    if(count($results)>0){
-
-        $user= $results;
-
-    }
-}
-
-
+require 'baseDatos.php';
 
 ?>
 
@@ -32,7 +12,7 @@ if(isset($_SESSION['user_id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sitio Web</title>
 
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
 
 
 </head>
@@ -43,8 +23,7 @@ if(isset($_SESSION['user_id'])){
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="nav navbar-nav">
-            
-            <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
+        <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
             <a class="nav-item nav-link active" href="clientes.php" role="button">Clientes</a>
             <a class="nav-item nav-link active" href="pedidos.php" role="button">Pedidos</a>
             <a class="nav-item nav-link active" href="rutas.php" role="button">Rutas</a>
@@ -59,7 +38,7 @@ if(isset($_SESSION['user_id'])){
 
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="display-3">Inicio</h1>
+                    <h1 class="display-3">Clientes</h1>
                     <p class="lead">RapiTrans</p>
                     <hr class="my-2">
                     <p>Empresa se dedica al transporte de productos y mensajería de oficina a sus clientes</p>
