@@ -1,27 +1,4 @@
-<?php
 
-session_start();
-
-require 'conexion.php';
-
-if(isset($_SESSION['user_id'])){
-    $records = $conn->prepare('SELECT id, usuario, password FROM users WHERE id = :id');
-    $records->bindparam(':id', $_SESSION['user_id']);
-    $records->exceute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $user=null;
-
-    if(count($results)>0){
-
-        $user= $results;
-
-    }
-}
-
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +15,7 @@ if(isset($_SESSION['user_id'])){
 </head>
 
 <body>
+
 
     RapiTrans
 

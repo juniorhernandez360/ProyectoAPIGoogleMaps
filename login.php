@@ -1,28 +1,26 @@
 <?php
 
-require 'conexion.php';
 
+  session_start();
 
+  if (isset($_SESSION['user_id'])) {
+    header('Location: /misitio');
+  }
+  require 'conexion.php';
 
-if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
-    $sqli = "INSERT INTO users (usuario, password) VALUES (:usuario, :password)";
-    $stmt = $conn->prepare($sqli);
-    $stmt->bindParam(':usuario', $_POST['usuario']);
-    $stmt->bindParam(':password', $_POST['password']);
+  if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
+    $records = $conn->prepare('SELECT id, usuario, password FROM users WHERE usuario = :usuario');
+    $records->bindParam(':usuario', $_POST['usuario ']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $message = '';
+
     
-    
-    if($stmt->execute()){
-
-        $message = 'usuario creado';
-    }else{
-        $message = 'no se a creado el usuario';
-    }
-
-}
-
+   
+  }
 
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -59,13 +57,13 @@ if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
 
                 <div class="card">
                     <div class="card-header">
-                        Crear usuario
-                        
-                        
+                        Ingresar a Portal RapiTrans
+
+
                     </div>
                     <div class="card-body">
-                        <form action="admin.php" method="POST">
-                        <span> <a href="login.php">Iniciar Sesion </a></span>
+                        <form action="login.php" method="POST">
+                            <span> <a href="admin.php">Registrarse </a></span>
 
 
                             <div class="form-group">
