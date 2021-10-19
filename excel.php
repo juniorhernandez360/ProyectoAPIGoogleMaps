@@ -14,5 +14,4 @@ while($mostrar=mysqli_fetch_assoc($resultado)){
    
 }
 
-
 ?>
