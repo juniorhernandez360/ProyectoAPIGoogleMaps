@@ -23,6 +23,7 @@
         <div class="nav navbar-nav">
             
             <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
+            <a class="nav-item nav-link active" href="vehiculo.php" role="button">Vehiculos</a>
             <a class="nav-item nav-link active" href="cliente.php" role="button">Pedidos</a>
             <a class="nav-item nav-link active" href="clientes.php" role="button">Clientes</a>            
             <a class="nav-item nav-link active" href="rutas.html" role="button">Rutas</a>

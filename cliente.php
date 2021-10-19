@@ -2,17 +2,18 @@
 
 require 'conexion.php';
 
-if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['latitud'])&& !empty($_POST['longitud'])&& !empty($_POST['telefono'])
+if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['latitud'])&& !empty($_POST['longitud'])&& !empty($_POST['telefono'])&& !empty($_POST['paquete'])
 && !empty($_POST['nombre2'])&& !empty($_POST['apellido2'])&& !empty($_POST['latitud2'])&& !empty($_POST['longitud'])&& !empty($_POST['telefono2'])){
 
-    $sql = "INSERT INTO cliente (nombre, apellido, latitud, longitud, telefono, nombre2, apellido2, latitud2, longitud2, telefono2) 
-    VALUES (:nombre, :apellido, :latitud, :longitud, :telefono, :nombre2, :apellido2, :latitud2, :longitud2, :telefono2)";
+    $sql = "INSERT INTO cliente (nombre, apellido, latitud, longitud, telefono, paquete, nombre2, apellido2, latitud2, longitud2, telefono2) 
+    VALUES (:nombre, :apellido, :latitud, :longitud, :telefono, :paquete, :nombre2, :apellido2, :latitud2, :longitud2, :telefono2)";
     $client = $conn-> prepare($sql);
     $client->bindparam(':nombre', $_POST['nombre']);
     $client->bindparam(':apellido', $_POST['apellido']);
     $client->bindparam(':latitud', $_POST['latitud']);
     $client->bindparam(':longitud', $_POST['longitud']);
     $client->bindparam(':telefono', $_POST['telefono']);
+    $client->bindparam(':paquete', $_POST['paquete']);
 
     $client->bindparam(':nombre2', $_POST['nombre2']);
     $client->bindparam(':apellido2', $_POST['apellido2']);
@@ -53,7 +54,8 @@ if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['latitu
             
         <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
             <a class="nav-item nav-link active" href="cliente.php" role="button">Pedidos</a>
-            <a class="nav-item nav-link active" href="clientes.php" role="button">Clientes</a>            
+            <a class="nav-item nav-link active" href="vehiculo.php" role="button">Vehiculos</a>
+            <a class="nav-item nav-link active" href="clientes.php" role="button">Clientes</a>
             <a class="nav-item nav-link active" href="rutas.html" role="button">Rutas</a>
             <a class="nav-item nav-link active" href="estadisticas.php" role="button">Estadisticas</a>
             <a class="nav-item nav-link active" href="estadoPedido.php" role="button">Estado de Pedido</a>
@@ -138,6 +140,16 @@ if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['latitu
                     Debe de llenar el campo!
                 </div>
             </div>
+
+            <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom03">Cantidad de Paquetes</label>
+                <input type="tel" class="form-control" name="paquete" id="paquete" maxlength="2" placeholder="Cantidad de Paquetes" required>
+                <div class="invalid-feedback">
+                    Debe de llenar el campo!
+                </div>
+            </div>
+
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="nav navbar-nav">
                 </div>
@@ -193,6 +205,7 @@ if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['latitu
             </div>
         </div>
         <button class="btn btn-primary" name="aceptar" id=name="aceptar" type="submit">Aceptar</button>
+        
         <p></p>
         <p></p>
         <p></p>
@@ -205,8 +218,4 @@ if(!empty($_POST['nombre'])&& !empty($_POST['apellido'])&& !empty($_POST['latitu
     </div>
     </div>
 </body>
-
-
-
-
 </html>
