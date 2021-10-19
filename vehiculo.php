@@ -45,20 +45,9 @@ if(!empty($_POST['placa'])&& !empty($_POST['vehiculo'])&& !empty($_POST['marca']
 <body>
     RapiTrans
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="nav navbar-nav">
-
-            <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
-            <a class="nav-item nav-link active" href="cliente.php" role="button">Pedidos</a>
-            <a class="nav-item nav-link active" href="vehiculo.php" role="button">Vehiculos</a>
-            <a class="nav-item nav-link active" href="clientes.php" role="button">Clientes</a>
-            <a class="nav-item nav-link active" href="rutas.html" role="button">Rutas</a>
-            <a class="nav-item nav-link active" href="estadisticas.php" role="button">Estadisticas</a>
-            <a class="nav-item nav-link active" href="estadoPedido.php" role="button">Estado de Pedido</a>
-
-        </div>
-
-    </nav>
+    <?php
+require'templas.php';
+?>
 
     <a class="nav-item nav-link active" href="datosVehiculos.php" role="button">Datos de los Vehiculos</a>
 
@@ -172,13 +161,12 @@ if(!empty($_POST['placa'])&& !empty($_POST['vehiculo'])&& !empty($_POST['marca']
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom02">Apellidos</label>
-                <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellidos"
-                    required>
+                <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellidos" required>
                 <div class="valid-feedback">
                     Debe de llenar el campo!
                 </div>
             </div>
-           
+
 
         </div>
         <div class="form-row">

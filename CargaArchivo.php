@@ -25,12 +25,12 @@ require'templas.php';
 
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="display-3">Estadisticas</h1>
+                    <h1 class="display-3">Carga de Archivos</h1>
                     <p class="lead">RapiTrans</p>
                     <hr class="my-2">
                     <p>Empresa se dedica al transporte de productos y mensajería de oficina a sus clientes</p>
                     <p class="lead">
-                        
+
                     </p>
                 </div>
             </div>
@@ -38,6 +38,26 @@ require'templas.php';
 
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+
+            <form action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank">
+
+                <p>
+
+                    <input type="file" name="archivosubido">
+
+                    <input class="btn btn-primary" type="submit" value="Enviar datos">
+
+                </p>
+
+            </form>
+
+
+        </div>
+    </div>
+
 </body>
 
 </html>

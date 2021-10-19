@@ -19,20 +19,9 @@
 
     RapiTrans
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="nav navbar-nav">
-            
-            <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
-            <a class="nav-item nav-link active" href="vehiculo.php" role="button">Vehiculos</a>
-            <a class="nav-item nav-link active" href="cliente.php" role="button">Pedidos</a>
-            <a class="nav-item nav-link active" href="clientes.php" role="button">Clientes</a>            
-            <a class="nav-item nav-link active" href="rutas.html" role="button">Rutas</a>
-            <a class="nav-item nav-link active" href="estadisticas.php" role="button">Estadisticas</a>
-            <a class="nav-item nav-link active" href="estadoPedido.php" role="button">Estado de Pedido</a>
-            
-        </div>
-
-    </nav>
+<?php
+require'templas.php';
+?>
 
     <div class="container">
         <div class="row">
