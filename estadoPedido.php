@@ -46,6 +46,37 @@
 
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+                <div>
+                <script type="text/javascript">
+                    function iniciarMap() {
+                        var coord = {
+                            lat: 14.6343538,
+                            lng: -90.5770483
+                        };
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 18,
+                            center: coord
+                        });
+                        var marker = new google.maps.Marker({
+                            position: coord,
+                            map: map
+                        });
+                    }
+                    </script>
+                </div>
+            <div class="jumbotron jumbotron-fluid">
+            <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF7dUHdwpuUWaXYLSH9A4kKJiNAICljbY&callback=iniciarMap">
+            </script>
+            </div>
+
+
+        </div>
+    </div>
+
 </body>
 
 </html>
