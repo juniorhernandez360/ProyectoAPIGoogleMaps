@@ -25,7 +25,7 @@
             <a class="nav-item nav-link active" href="menu.php" role="button">Inicio</a>
             <a class="nav-item nav-link active" href="clientes.php" role="button">Clientes</a>
             <a class="nav-item nav-link active" href="pedidos.php" role="button">Pedidos</a>
-            <a class="nav-item nav-link active" href="rutas.php" role="button">Rutas</a>
+            <a class="nav-item nav-link active" href="rutas.html" role="button">Rutas</a>
             <a class="nav-item nav-link active" href="estadisticas.php" role="button">Estadisticas</a>
             <a class="nav-item nav-link active" href="estadoPedido.php" role="button">Estado de Pedido</a>
         </div>
