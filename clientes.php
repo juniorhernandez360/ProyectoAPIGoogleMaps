@@ -45,10 +45,10 @@ require'templas.php';
 
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="display-3">Clientes</h1>
-                    <p class="lead">RapiTrans</p>
+                    <h1 class="display-3">Tiendas</h1>
+                    <p class="lead">Comercializadora JR</p>
                     <hr class="my-2">
-                    <p>Empresa se dedica al transporte de productos y mensajería de oficina a sus clientes</p>
+                    </p>
                     <p class="lead">
 
                     </p>
