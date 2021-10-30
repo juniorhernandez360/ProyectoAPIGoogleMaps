@@ -33,19 +33,17 @@
 
 
                 <div class="card">
-                    <div class="card-header">
-                        Crear usuario
+                    <div class="card-header text-center">
+                        Iniciar Sesión
 
 
                     </div>
                     <div class="card-body">
                         <form action="admin.html">
-                            <div ng-if="false">
-                                <a class="nav-item nav-link active" href="Index.html" role="button">Menu</a>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="exampleInputEmail1">usuario</label>
-                                <input type="text" class="form-control" name="usuario" id="usuario"
+                                <input class="form-control" name="usuario" id="usuario"
                                     placeholder="Ingresar usuario">
 
                             </div>
@@ -54,11 +52,26 @@
                                 <input type="password" class="form-control" name="password"
                                     placeholder="Ingresar Contraseña" id="contrasenia">
                             </div>
+                            <script type="text/javascript">
+                                var x = document.getElementById("usuario").value;
+                                var xy = 1;
+                                function valCampo(){
+                                    if(x === '123'){
+                                       alert("correcto");
+                                    } else {
+                                        alert("Credenciales CORRECTAS");
+                                        xy = 0;
+                                    }
+                                }
+                            </script>
 
-
-                            <button type="submit" value="ingresar" name="ingresar" class="btn btn-primary"
-                            (click)="myFunction()">Ingresar
-                                </button>
+                            <!--<button type="submit" value="ingresar" name="ingresar" class="btn btn-primary"
+                            (click)="myFunction()" href="Index.html">Ingresar
+                                </button>-->
+                                <div>
+                                    <a class="nav-item nav-link active btn btn-primary"  href="Index.html" role="button"
+                                    onclick="valCampo()">Ingresar</a>
+                                </div>
                         </form>
                         
 
